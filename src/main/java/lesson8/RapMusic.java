@@ -1,4 +1,4 @@
-package spring;
+package lesson8;
 
 public class RapMusic implements Music {
     @Override

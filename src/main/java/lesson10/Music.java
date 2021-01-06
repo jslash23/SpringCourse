@@ -1,6 +1,6 @@
-package spring;
+package lesson10;
 
-public interface Musik {
+public interface Music {
     String getSong();
     String getNameOfArtist();
     int getAgeOfArtist();

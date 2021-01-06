@@ -1,18 +1,18 @@
-package spring;
+package lesson8;
 
-public class ClassicalMusik implements Musik {
+public class RockMusic implements Music {
     @Override
     public String getSong() {
-        return "To Elize";
+        return "Corn";
     }
 
     @Override
     public String getNameOfArtist() {
-        return "Mozart";
+        return "Jack";
     }
 
     @Override
     public int getAgeOfArtist() {
-        return 150;
+        return 41;
     }
 }

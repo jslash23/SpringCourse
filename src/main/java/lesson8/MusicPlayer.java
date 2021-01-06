@@ -1,4 +1,4 @@
-package spring;
+package lesson8;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +18,14 @@ public class MusicPlayer {
 
     private String name;
     private int volume;
+
+    public void doMyInit(){
+        System.out.println("Doing my initialisation");
+    }
+
+    public void doMyDestroy(){
+        System.out.println("Doing my destroy!");
+    }
 
 
 
@@ -46,14 +54,6 @@ public class MusicPlayer {
     }
 
     public MusicPlayer(){
-    }
-
-    public void doMyInit(){
-        System.out.println("Doing my initialisation");
-    }
-
-    public void doMyDestroy(){
-        System.out.println("Doing my destroy!");
     }
 
     public void playMusicList(){

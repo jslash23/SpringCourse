@@ -1,5 +1,8 @@
-package spring;
+package lesson10;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RapMusic implements Music {
     @Override
     public String getNameOfArtist() {

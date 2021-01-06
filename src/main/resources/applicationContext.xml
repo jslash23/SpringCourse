@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/util
+          https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="musicBean" class="spring.RapMusic">
+    <context:property-placeholder location="musicPlayer.properties"/>
+
+
+    <bean id="musicBean1"
+          class="lesson8.RockMusic" >
+
+    </bean>
+
+    <bean id="musicBean2"
+          class="lesson8.RapMusic" >
+
+    </bean>
+
+    <bean id="musicBean3"
+          class="lesson8.ClassicalMusic"
+    factory-method="getClassicalMusic">
+
+    </bean>
+
+    <!--bean id="musicBean3" class="spring.RapMusic">
+    </bean-->
+
+    <!--спринг каждый раз будет создавать новый
+    //объект при вызове метода getBean-->
+
+    <bean id="musicPlayer"
+          class="lesson8.MusicPlayer" scope="prototype"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
+        <property name="musicList">
+            <list>
+                <ref bean="musicBean1"/>
+                <ref bean="musicBean2"/>
+                <ref bean="musicBean3"/>
+            </list>
+        </property>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 </beans>

@@ -1,6 +1,6 @@
 package spring;
 
-public class RockMusik implements Musik {
+public class RockMusic implements Music {
     @Override
     public String getSong() {
         return "Corn";
