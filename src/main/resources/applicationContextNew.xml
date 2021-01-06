@@ -10,5 +10,6 @@
          http://www.springframework.org/schema/util
           https://www.springframework.org/schema/util/spring-util.xsd">
 
-<context:component-scan base-package="L11HW"/>
+    <context:component-scan base-package="L12"/>
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 </beans>
